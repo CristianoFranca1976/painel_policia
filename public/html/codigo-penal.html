@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Painel - Policia</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="aba">
+        <button type="button" id="home" onclick="window.location.href='/'">
+          Home
+        </button>
+        <button
+          type="button"
+          id="consulta"
+          onclick="window.location.href='/html/consulta.html'"
+        >
+          Consulta
+        </button>
+        <button
+          type="button"
+          id="prisao"
+          onclick="window.location.href='/html/prisao.html'"
+        >
+          Prisao
+        </button>
+        <button
+          type="button"
+          id="codigo-penal"
+          onclick="window.location.href='/html/codigo-penal.html'"
+        >
+          Codigo Penal
+        </button>
+        <button
+          type="button"
+          id="procedimento"
+          onclick="window.location.href='/html/procedimento.html'"
+        >
+          Procedimentos
+        </button>
+      </div>
+      <div class="visual">
+        <h1>Codigo Penal</h1>
+        <p>Pesquise e veja qual o crime cometido!</p>
+        <label for="artigo"
+          >Artº
+          <input type="search" name="artigo" id="artigo" size="5px" onkeyup="myFunction()"/>
+          <button type="submit" id="pesquisar">Pesquisar</button>
+        </label>
+        <div class="lista-artigos">
+          <div class="artigo">
+            <h2>Artigo 1º</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 33º - Trafico de drogas</h2>
+            <p>
+              Proibindo qualquer tipo de venda, compra, produção, armazenamento,
+              entrega ou fornecimento, mesmo que gratuito, de drogas sem
+              autorização ou em desconformidade com a legislação
+            </p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 121º - Homicídio</h2>
+            <p>Define-se o homicídio simples como “matar alguém”.</p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 129º - Lesões Corporais</h2>
+            <p>Ofender a integridade corporal ou a saúde de outrem.</p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 135º - Omissão de socorro</h2>
+            <p>
+              Deixar de prestar assistência, quando possível fazê-lo sem risco
+              pessoal, à criança abandonada ou extraviada, ou à pessoa inválida
+              ou ferida, ao desamparo ou em grave e iminente perigo; ou não
+              pedir, nesses casos, o socorro da autoridade pública.
+            </p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 147º - Ameaçar</h2>
+            <p>
+              Ameaçar alguém, por palavra, escrito ou gesto, ou qualquer outro
+              meio simbólico, de causar-lhe mal injusto e grave:
+            </p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 155º - Furto</h2>
+            <p>Subtrair, para si ou para outrem, coisa alheia móvel</p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 157º - Roubo</h2>
+            <p>
+              Quem, com ilegítima intenção de apropriação para si ou para outra
+              pessoa, subtrair, ou constranger a que lhe seja entregue, coisa
+              móvel ou animal alheios, por meio de violência contra uma pessoa,
+              de ameaça com perigo iminente para a vida ou para a integridade
+              física, ou pondo-a na impossibilidade de resistir
+            </p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 330º - Tentativa de fuga</h2>
+            <p>Desobedecer a ordem legal de funcionário público.</p>
+          </div>
+          <div class="artigo">
+            <h2>Artigo 331º - Desacato</h2>
+            <p>
+              Consiste em desacatar funcionário público no exercício da função
+              ou em razão dela.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function myFunction() {
+        let artigoDigitado = document.getElementById("artigo").value.trim().toLowerCase();
+        let artigos = document.querySelectorAll(".artigo");
+        let listaArtigo = document.querySelector('.artigo-list');
+
+        artigos.forEach((artigo) => {
+          let titulo = artigo.querySelector("h2").textContent.toLowerCase();
+          
+          if (titulo.includes(artigoDigitado)) {
+            artigo.classList.remove("hidden"); 
+          } else {
+            artigo.classList.add("hidden");   
+          }
+        });
+      };
+    </script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

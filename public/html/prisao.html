@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Painel - Policia</title>
+</head>
+<body>
+ 
+  <div id="container">
+    <div class="aba">
+      <button type="button" id="home" onclick="window.location.href='/'">Home</button>
+      <button type="button" id="consulta" onclick="window.location.href='/html/consulta.html'">Consulta</button>
+      <button type="button" id="prisao" onclick="window.location.href='/html/prisao.html'">Prisao</button>
+      <button type="button" id="codigo-penal" onclick="window.location.href='/html/codigo-penal.html'">Codigo Penal</button>
+      <button type="button" id="procedimento" onclick="window.location.href='/html/procedimento.html'">Procedimentos</button>
+    </div>
+    <div class="visual">
+      <h1>Sistema Prisional</h1>
+      <header>
+        <label for="pesquisar">ID:
+        <input type="text" id="pesquisar" name="pesquisar" size="5px">
+        </label>
+        <button type="submit">Pesquisar</button>
+      </header>
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>
